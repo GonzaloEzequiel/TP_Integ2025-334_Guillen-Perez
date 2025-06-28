@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP Integrador 334</title>    
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script type="module" src="./productos.js" defer ></script>
+</head>
+<body>
+    <header>
+        <div class="espaciado"></div>
+        <img id="logo" src="../recursos/logo.png" alt="Logo Fulbo$hop"/>
+        <nav id="barra-navegacion">
+            <label class="switch">
+                <input type="checkbox" class="tema" id="tema">
+                <div class="riel"><span class="bola"></span></div>
+                <span class="indicador"><img src="../recursos/temaOscuro.png" alt="temaOscuro" id="indicadorTema"></span>
+            </label>
+            <button class="boton-navegacion" id="boton-productos">Productos</button>
+            <button class="boton-navegacion" id="boton-carrito">Carrito</button>
+            <button class="boton-navegacion" id="boton-ticket">Ticket</button>
+            <button class="boton-navegacion" id="boton-salir">Salir</button>
+        </nav>
+    </header>
+
+        <hr>
+        <h1>Nuestros Productos</h1>
+        <hr>
+
+        <main id="contenedor-get">
+            <div id="productos-container">
+                <ul id="productos-lista">
+                    <!--
+                    <li class="li-listados productos-listados">
+                        <img src="" alt="" class="img-listados">
+                        <p>Id: / Nombre: / <strong>Precio: </strong></p>
+                    </li>
+                    -->
+                </ul>
+            </div>
+        </main>
+
+        <script>
+            
+            async function obtenerDatosProductos() {
+                try {
+
+                    // Esperamos la respuesta (en JSON) de la petición fetch
+                    let respuesta = await fetch("http://localhost:3000/productos");
+
+                    // Transformamos la repsuta a objeto JS
+                    let datos = await respuesta.json();
+
+                    console.log(datos);
+                    console.table(datos.payload);
+
+                    mostrarProductos(datos);
+
+                } catch(error) {
+                    console.log("Error: ", error);
+                }
+            }
+
+            function mostrarProductos(array) {
+                let listaProductos = array.payload; // Acá guardamos directamente el array de productos
+
+                let productos_lista = document.getElementById("productos-lista");
+
+                let HTMLProducto = "";
+
+                listaProductos.forEach(producto => {
+                    HTMLProducto += `
+                        <li class="li-listados productos-listados">
+                            <img src="${producto.imagen}" alt="${producto.nombre}" class="img-listados">
+                            <p>Id: ${producto.id} / ${producto.tipo_producto} ${producto.desc_texto} N°${producto.desc_numero} / <strong>Precio: $${producto.precio}</strong></p>
+                        </li>
+                    `;
+                });
+
+                productos_lista.innerHTML = HTMLProducto;
+            }
+
+            obtenerDatosProductos();
+
+        </script>
+</body>
+</html>

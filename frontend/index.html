@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/estilos.css">
+    <script type="module" src="./index.js" defer></script>
+    <script type="module" src="./src/switchTemas.js" defer></script>
+    <title>TP Integrador | Fulbo$hop</title>
+</head>
+<body>
+    <header>
+        <div class="espaciado"></div>
+        <img id="logo" src="./recursos/logo.png" alt="Logo Fulbo$hop"/>
+        <nav id="barra-navegacion">
+            <label class="switch">
+                <input type="checkbox" class="tema" id="tema">
+                <div class="riel"><span class="bola"></span></div>
+                <span class="indicador"><img src="" alt="temaOscuro" id="indicadorTema"></span>
+            </label>
+            <button class="boton-navegacion" id="boton-productos">Productos</button>
+            <button class="boton-navegacion" id="boton-carrito">Carrito</button>
+            <button class="boton-navegacion" id="boton-ticket">Ticket</button>
+            <button class="boton-navegacion" id="boton-salir">Salir</button>
+        </nav>
+    </header>
+
+    <main>
+        <h1 id="titulo">Bienvenido a <span id="nombre-empresa">FULBO<span id="titulo-logo1">$</span>HOP</span></h1>
+
+        <div id="login">
+
+
+            <div class="credenciales-ingreso" id="ingreso-cliente">
+                <h3 id="credenciales-empleado-titulo">Ingrese su Nombre</h3>
+                <form id="form-cliente">
+                    <label for="nombre-cliente" class="componente-login">Nombre</label>
+                    <br>
+                    <input type="text" name="nombre-cliente" id="nombre-cliente" class="componente-login" required />
+                    <br>
+                    <input type="submit" class="boton-ingresar componente-login" id="ingresar-cliente"  value="Continuar" />
+                </form>
+            </div>
+            <div class="credenciales-ingreso" id="ingreso-admin">
+                <h3 id="credenciales-empleado-titulo">Sección Administradores</h3>
+                <form id="form-admin">
+                    <label for="correo-admin" class="componente-login">Correo</label>
+                    <br>
+                    <input type="email" name="correo-admin" id="correo-admin" class="componente-login" required />
+                    <br>
+                    <label for="contrasenia-admin" class="componente-login">Contraseña</label>
+                    <br>
+                    <input type="password" name="contrasenia-admin" id="contrasenia-admin" class="componente-login" required />
+                    <br>
+                    <input type="button" class="boton-ingresar componente-login" id="boton-ingreso-rapido"  value="Ingreso Rápido" />
+                    <br>
+                    <input type="submit" class="boton-ingresar componente-login" id="ingresar-admin" value="Ingresar" />
+                </form>
+            </div>
+
+
+
+
+        </div>
+    </main>
+
+    <footer>
+        <div id="datos-alumnos">
+            <p>Pérez, Gonzalo Ezequiel - Guillen, Ignacio</p>
+        </div>
+    </footer>
+    
+</body>
+</html>
