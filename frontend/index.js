@@ -8,7 +8,7 @@ const formCliente = document.getElementById("form-cliente");
 formCliente.addEventListener("submit", event => {
     event.preventDefault();
     window.location.href = "./paginas/productos.html"
-    localStorage.setItem("user", document.getElementById("nombre-cliente").value.trim());
+    sessionStorage.setItem("user", document.getElementById("nombre-cliente").value.trim());
 });
 
 const formAdmin = document.getElementById("form-admin");
@@ -37,7 +37,7 @@ formAdmin.addEventListener("submit", async event => {
         if(response.status === 200) {
 
             let resultado = await response.json();
-            localStorage.setItem("user", resultado.admin);
+            sessionStorage.setItem("user", resultado.admin);
             window.location.href = "./paginas/dashboard.html"
 
         }
