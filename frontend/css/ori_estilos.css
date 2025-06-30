@@ -1,0 +1,194 @@
+/*
+    Estilos de la página de bienvenida
+*/
+
+:root {
+  --color-fondo: white;
+  --color-texto: black;
+  --color-header: darkolivegreen;
+}
+
+/* Tema oscuro aplicado con clase */
+.tema-oscuro {
+  --color-fondo: #111;
+  --color-texto: #eee;
+  --color-header: #003300;
+}
+
+html {
+    height: 80vh;
+    width: 100vw;
+}
+
+body {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+}
+
+/* ELEMENTOS DEL HEADER */
+header {
+    display: flex;
+    background-color: var(--color-header);
+    height: 130px;
+    align-items: center;
+    justify-content: center;
+}
+
+.espaciado {
+    width: 33%;
+}
+
+#logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+}
+
+#barra-navegacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.boton-navegacion {
+    height: 30px;
+    width: 100px;
+    background-color: var(--color-header);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    /* visibility: hidden; */
+}
+
+/* ELEMENTOS DEL BODY */
+main {    
+    /* margin-bottom: 20px; */
+}
+
+#titulo {
+    margin-top: 0px;
+    font-size: 120px;
+    text-align: center;
+}
+
+#titulo-logo1 {
+    font-size: 150px;
+    color: goldenrod;
+}
+
+#login {
+    display: flex;
+    justify-content: space-evenly;
+    height: 500px;
+    align-items: stretch;
+}
+
+h3 {
+    color: var(--color-texto);
+}
+
+.credenciales-ingreso {
+    width: 250px;
+    background-color: var(--color-fondo);
+    border: 3px var(--color-texto) solid;
+    border-radius: 10px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}
+
+.componente-login {
+    margin: 5px 0px;
+}
+
+/* ELEMENTOS DEL FOOTER */
+footer {
+    /* margin-top: 0px; */
+    /* height: 75px; */
+    background-color: var(--color-header);
+}
+
+#datos-alumnos {
+    /* margin-top: -20px; */
+    width: 100%w;
+    font-style: italic;
+    text-align: center;
+}
+
+/*  Seccion switch  */
+
+.switch {
+    display: flex;
+    align-items: center;
+    max-height: 30px;
+    border-radius: 0.8rem;
+    cursor: pointer;
+}
+
+.switch .tema {
+    display: none;
+}
+
+.riel {
+    position: relative;
+    width: 30px;
+    height: 12px;
+    background-color: aliceblue;
+    border-radius: 3rem;
+    margin-right: 0.5rem;
+}
+
+.bola {
+    width: 15px;
+    height: 15px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: -2px;
+    transform: translateY(-50%);
+    transition: transform 0.4s;
+}
+
+.tema:checked ~ .riel .bola {
+    transform: translate(20px, -50%);
+}
+
+.indicador img {
+    height: 25px;
+    width: auto;
+    border-radius: 50%;
+}
+
+/*  Seccion Responsiveness   */
+
+@media only screen and (max-width: 600px) {
+    .espaciado {
+        display: none;
+    }
+
+    #titulo {
+        font-size: 60px;
+    }
+
+    #nombre-empresa {
+        font-size: 60px;
+    }
+
+    #titulo-logo1 {
+    font-size: 80px;
+    }
+
+    #login {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+}
+
